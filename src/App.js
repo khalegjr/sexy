@@ -1,13 +1,6 @@
-import { useEffect, useState } from "react";
-import { http } from "./service/api";
-
+import { Users } from "./containers/Users/Users";
 function App() {
-  const [users, setUsers] = useState([]);
-
-  useEffect(() => {
-    http.get("/users").then(({ data }) => setUsers(data.users));
-  }, []);
-  return <div>{JSON.stringify(users)}</div>;
+  return <Users />;
 }
 
 export default App;
