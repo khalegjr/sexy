@@ -1,5 +1,13 @@
+import { useEffect, useState } from "react";
+import { http } from "./service/api";
+
 function App() {
-  return <div>Hello World</div>;
+  const [users, setUsers] = useState([]);
+
+  useEffect(() => {
+    http.get("/users").then(({ data }) => setUsers(data.users));
+  }, []);
+  return <div>{users}</div>;
 }
 
 export default App;
