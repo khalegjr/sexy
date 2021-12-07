@@ -2,6 +2,7 @@ import { Users } from "./containers/Users/Users";
 import { Link, Outlet, ReactLocation, Router, useMatch } from "react-location";
 import { http } from "./service/api";
 import { Header } from "./components/Header";
+import { Products } from "./containers/Products/Products";
 
 const location = new ReactLocation();
 const routes = [
@@ -19,6 +20,10 @@ const routes = [
     }),
     pendingElement: async () => <div>Loading...</div>,
     pendingMs: 300,
+  },
+  {
+    path: "/products",
+    element: <Products />,
   },
 ];
 
