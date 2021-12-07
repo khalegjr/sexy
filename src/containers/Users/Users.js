@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { http } from "../../service/api";
+import { Card } from "./Card";
 
 export function Users() {
   const [users, setUsers] = useState([]);
@@ -9,12 +10,10 @@ export function Users() {
   }, []);
 
   return (
-    <div>
+    <ul className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
       {users?.map((user) => (
-        <p key={user.id} data-testid="user">
-          {user.name}
-        </p>
+        <Card key={user.id} user={user} />
       ))}
-    </div>
+    </ul>
   );
 }
