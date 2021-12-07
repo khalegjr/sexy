@@ -2,7 +2,7 @@
  * Mirage JS guide on Models: https://miragejs.com/docs/data-layer/models
  */
 
-import { Model, hasMany, belongsTo } from 'miragejs';
+import { Model } from 'miragejs';
 
 /*
  * Everytime you create a new resource you have
