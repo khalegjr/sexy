@@ -22,6 +22,8 @@ const routes = [
         return data.data.users;
       }),
     }),
+    pendingElement: async () => <div>Loading...</div>,
+    pendingMs: 300,
   },
 ];
 
