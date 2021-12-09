@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { http } from "../../service/api";
 
-export function Products() {
+export default function Products() {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {

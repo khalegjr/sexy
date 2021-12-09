@@ -1,8 +1,6 @@
-import { Users } from "./containers/Users/Users";
 import { Link, Outlet, ReactLocation, Router, useMatch } from "react-location";
 import { http } from "./service/api";
 import { Header } from "./components/Header";
-import { Products } from "./containers/Products/Products";
 
 const location = new ReactLocation();
 const routes = [
@@ -12,7 +10,8 @@ const routes = [
   },
   {
     path: "/users",
-    element: <Users />,
+    element: () =>
+      import("./containers/Users/Users").then((module) => <module.default />),
     loader: async () => ({
       users: await http.get("/users").then((data) => {
         return data.data.users;
@@ -23,7 +22,10 @@ const routes = [
   },
   {
     path: "/products",
-    element: <Products />,
+    element: () =>
+      import("./containers/Products/Products").then((module) => (
+        <module.default />
+      )),
   },
 ];
 
