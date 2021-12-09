@@ -1,21 +1,30 @@
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 import { http } from "../../service/api";
 import { Card } from "./Card";
 import { Header } from "../../components/Header";
+import { useQuery } from "react-query";
 
 export default function Products() {
-  const [products, setProducts] = useState([]);
+  const { isLoading, isError, data } = useQuery("todos", () =>
+    http.get("/products").then(({ data }) => data.products)
+  );
 
-  useEffect(() => {
-    http.get("/products").then(({ data }) => setProducts(data.products));
-  }, []);
+  if (isLoading) return <p>Loading...</p>;
+  if (isError) return <p>Error :(</p>;
+
+  console.log({ isLoading, isError, data });
+  // const [products, setProducts] = useState([]);
+
+  // useEffect(() => {
+  //   http.get("/products").then(({ data }) => setProducts(data.products));
+  // }, []);
 
   return (
     <div>
       <Header>Products</Header>
 
       <div className="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-        {products.map((product) => (
+        {data?.map((product) => (
           <Card product={product} key={product.id} />
         ))}
       </div>
