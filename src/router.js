@@ -19,7 +19,9 @@ const routes = [
         return data.data.users;
       }),
     })),
-    pendingElement: async () => <Spinner />,
+    pendingElement: async () => (
+      <Spinner variant="green" message="Loading users" />
+    ),
     pendingMs: 300,
   },
   {

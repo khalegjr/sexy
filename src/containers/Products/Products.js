@@ -9,7 +9,7 @@ export default function Products() {
     http.get("/products").then(({ data }) => data.products)
   );
 
-  if (isLoading) return <Spinner />;
+  if (isLoading) return <Spinner message="Loading products" variant="orange" />;
   if (isError) return <p>Error :(</p>;
 
   console.log({ isLoading, isError, data });
