@@ -19,7 +19,7 @@ const routes = [
         return data.data.users;
       }),
     })),
-    pendingElement: async () => <div>Loading...</div>,
+    pendingElement: async () => <Spinner />,
     pendingMs: 300,
   },
   {
