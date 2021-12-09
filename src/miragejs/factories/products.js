@@ -16,5 +16,8 @@ export default {
     imageUrl() {
       return faker.random.image();
     },
+    productDetails() {
+      return faker.internet.url();
+    },
   }),
 };
