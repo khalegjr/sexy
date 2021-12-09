@@ -9699,7 +9699,18 @@ react-is@^17.0.1:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-17.0.1.tgz#5b3531bd76a645a4c9fb6e693ed36419e3301339"
   integrity sha512-NAnt2iGDXohE5LI7uBnLnqvLQMtzhkiAOLXTmv+qnF9Ky7xAPcX8Up/xWIhxvLVGJvuLiNc4xQLtuqDRzb4fSA==
 
-react-location@^3.2.16:
+react-location-devtools@^3.2.16:
+  version "3.2.16"
+  resolved "https://registry.yarnpkg.com/react-location-devtools/-/react-location-devtools-3.2.16.tgz#e3f0ef7bad5ab97979d138dc853fdea3e6dca53e"
+  integrity sha512-J0s3n102WQsvxSPKfrU4ypKlCMt6wjBgsinRzoIXZUxZHZznBClK1U5darX68iLgzsZ88IYKv4XgwLCd3HCNUQ==
+  dependencies:
+    "@babel/runtime" "^7.15.4"
+    core-js "^3.18.3"
+    fast-async "7"
+    react-location "3.2.16"
+    ts-toolbelt "^9.6.0"
+
+react-location@3.2.16, react-location@^3.2.16:
   version "3.2.16"
   resolved "https://registry.yarnpkg.com/react-location/-/react-location-3.2.16.tgz#99ac15cd00b965d50923e55b7c15d24e75db8964"
   integrity sha512-Rd7uTsmQSGenHkkvjatyoNQdlV6hl3kwyjRsr8jdW3UprOIXbZH1RdUpfn2EdTK8v+YxTPJrxzBENEoiDLnswA==
