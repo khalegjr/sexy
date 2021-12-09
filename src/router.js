@@ -1,7 +1,7 @@
 import { Link, Outlet, ReactLocation, Router, useMatch } from "react-location";
 import { ReactLocationSimpleCache } from "react-location-simple-cache";
 import { http } from "./service/api";
-import { Header } from "./components/Header";
+import { Header, Spinner } from "./components";
 
 const location = new ReactLocation();
 const cache = new ReactLocationSimpleCache();

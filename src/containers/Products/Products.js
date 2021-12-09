@@ -1,7 +1,7 @@
 // import { useEffect, useState } from "react";
 import { http } from "../../service/api";
 import { Card } from "./Card";
-import { Header } from "../../components/Header";
+import { Header, Spinner } from "../../components";
 import { useQuery } from "react-query";
 
 export default function Products() {
