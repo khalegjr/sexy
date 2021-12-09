@@ -9710,6 +9710,17 @@ react-location-devtools@^3.2.16:
     react-location "3.2.16"
     ts-toolbelt "^9.6.0"
 
+react-location-simple-cache@^3.2.16:
+  version "3.2.16"
+  resolved "https://registry.yarnpkg.com/react-location-simple-cache/-/react-location-simple-cache-3.2.16.tgz#27ace91470c215e2c5f2f4945113d19fc2185f5f"
+  integrity sha512-oLY33B6L1hQKKgovc+7WBC6C8XC+zO9epPiMKwK3K0lRpMl4G4/u0C+2+HTlEo81n20r296lnNusz3bmx/4uLA==
+  dependencies:
+    "@babel/runtime" "^7.15.4"
+    core-js "^3.18.3"
+    fast-async "7"
+    react-location "3.2.16"
+    ts-toolbelt "^9.6.0"
+
 react-location@3.2.16, react-location@^3.2.16:
   version "3.2.16"
   resolved "https://registry.yarnpkg.com/react-location/-/react-location-3.2.16.tgz#99ac15cd00b965d50923e55b7c15d24e75db8964"
