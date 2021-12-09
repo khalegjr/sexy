@@ -3,6 +3,7 @@ import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { BellIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
 
 import { location, routes, Router, Link, Outlet } from "./router";
+import { ReactLocationDevtools } from "react-location-devtools";
 
 const user = {
   name: "Tom Cook",
@@ -199,6 +200,7 @@ export default function App() {
           </div>
         </main>
       </div>
+      <ReactLocationDevtools initialIsOpen={false} />
     </Router>
   );
 }
