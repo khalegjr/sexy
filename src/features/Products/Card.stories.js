@@ -1,9 +1,5 @@
 import { Card } from "./Card";
-import { makeServer } from "../../miragejs/server";
-
-const server = makeServer({ environment: "test" });
-const product = server.create("product");
-server.shutdown();
+import { getProduct } from "../../miragejs/api/products";
 
 export default {
   title: "Products/Card",
@@ -19,5 +15,5 @@ const Template = (args) => (
 export const Default = Template.bind({});
 
 Default.args = {
-  product,
+  product: getProduct(),
 };

@@ -1,11 +1,7 @@
+import { getProducts } from "../../miragejs/api/products";
 import { Products } from "./Products";
-import { makeServer } from "../../miragejs/server";
 
 export const productQty = 12;
-
-const server = makeServer({ environment: "test" });
-const products = server.createList("product", productQty);
-server.shutdown();
 
 export default {
   title: "Products",
@@ -17,5 +13,5 @@ const Template = (args) => <Products {...args} />;
 export const Default = Template.bind({});
 
 Default.args = {
-  products,
+  products: getProducts({ quantity: productQty }),
 };
