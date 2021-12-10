@@ -1,8 +1,10 @@
 import { Products } from "./Products";
 import { makeServer } from "../../miragejs/server";
 
+export const productQty = 12;
+
 const server = makeServer({ environment: "test" });
-const products = server.createList("product", 10);
+const products = server.createList("product", productQty);
 server.shutdown();
 
 export default {
