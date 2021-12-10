@@ -1,18 +1,9 @@
-import { makeServer } from "../../miragejs/server";
+import { Default, productQty } from "./Products.stories";
+import { render, screen } from "@testing-library/react";
 
 describe("Containers/Products", () => {
-  let server;
-
-  beforeEach(() => {
-    server = makeServer();
-  });
-
-  afterEach(() => {
-    server.shutdown();
-  });
-
-  it("should render", () => {
-    const products = server.createList("product", 10);
-    console.log(JSON.parse(JSON.stringify(products)));
+  it("should render a list of products", () => {
+    render(<Default {...Default.args} />);
+    expect(screen.getAllByTestId("product")).toHaveLength(productQty);
   });
 });
