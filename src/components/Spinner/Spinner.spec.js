@@ -35,11 +35,15 @@ describe("Components > Spinner", () => {
     const testCases = [
       ["Red", customColors.red],
       ["Blue", customColors.blue],
+      ["Green", customColors.green],
+      ["Yellow", customColors.yellow],
+      ["Orange", customColors.orange],
+      ["Unknown", customColors.unknown],
     ];
 
     it.each(testCases)(
       "Should render a %s Spinner with color %s",
-      ([variant, expected]) => {
+      (variant, expected) => {
         const Component = components[variant];
 
         render(<Component {...Component.args} />);
@@ -47,16 +51,16 @@ describe("Components > Spinner", () => {
         expect(screen.getByTestId("spinner")).toHaveStyle({
           "border-color": expected,
         });
+        if (variant !== "Unknown") {
+          expect(
+            screen.getByText(`I'm ${variant.toLowerCase()}!`)
+          ).toBeInTheDocument();
+        } else {
+          expect(
+            screen.getByText(/I don't know which color I am!/i)
+          ).toBeInTheDocument();
+        }
       }
     );
-
-    // it("should render a spinner with red variant", () => {
-    //   render(<Red {...Red.args} />);
-
-    //   expect(screen.getByTestId("spinner")).toHaveStyle({
-    //     "border-color": customColors.red,
-    //   });
-    //   expect(screen.getByText(/I'm red!/i)).toBeInTheDocument(); // usa ER para encontrar a frase sem diferenciar maiúsculas e minúsculas
-    // });
   });
 });
