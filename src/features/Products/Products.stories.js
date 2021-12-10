@@ -8,7 +8,11 @@ export default {
   component: Products,
 };
 
-const Template = (args) => <Products {...args} />;
+const Template = (args) => (
+  <div className="container mx-auto">
+    <Products {...args} />
+  </div>
+);
 
 export const Default = Template.bind({});
 
