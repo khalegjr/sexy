@@ -4,7 +4,7 @@ import { Products } from "./Products";
 export const productQty = 12;
 
 export default {
-  title: "Products",
+  title: "Features/Products",
   component: Products,
 };
 

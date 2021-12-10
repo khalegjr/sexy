@@ -2,7 +2,7 @@ import { Card } from "./Card";
 import { getProduct } from "../../miragejs/api/products";
 
 export default {
-  title: "Products/Card",
+  title: "Features/Products/Card",
   component: Card,
 };
 
